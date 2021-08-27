@@ -1,0 +1,28 @@
+.app-form-input-field {
+  width: 100%;
+  padding: 15px 16px 11px 16px;
+  height: 48px;
+
+  border: none;
+  border-radius: 8px;
+  background: rgba(var(--secondary-color-code), 0.05);
+  color: var(--secondary-color);
+
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+
+  &.bold {
+    font-weight: 600;
+  }
+
+  &::placeholder {
+    color: rgba(var(--secondary-color-code), 0.5);
+  }
+
+  &:hover {
+    background: rgba(var(--secondary-color-code), 0.2);
+  }
+}

@@ -1,0 +1,85 @@
+.app-scan-screen {
+  width: 100%;
+  padding: 32px 32px 72px 32px;
+  background: var(--text-color);
+  border-radius: 20px;
+  color: var(--secondary-color);
+
+  &__title {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--secondary-color);
+    margin-bottom: 18px;
+    margin-top: 32px;
+  }
+
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+    margin-bottom: 20px;
+    opacity: 0.75;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    ::ng-deep {
+      .app-checkbox-input-simple__container {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: 355px;
+    height: 120px;
+    margin-bottom: 25px;
+    padding: 16px 16px 16px 24px;
+    background: var(--card-bg-color);
+    border-radius: 12px;
+  }
+
+  &__list {
+    height: 88px;
+    width: 100%;
+    max-width: 315px;
+    overflow-y: scroll;
+    line-height: 19px;
+    color: var(--secondary-color-code);
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: var(--asimetric-bg-color);
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      width: 5px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      background: var(--secondary-color); 
+      width: 5px;
+    }
+
+    &-item {
+      margin-bottom: 5px;
+      font-family: 'Sofia pro', 'open-sans';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+    }
+  }
+}

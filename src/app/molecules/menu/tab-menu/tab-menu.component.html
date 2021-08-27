@@ -1,0 +1,11 @@
+<ul class="tab-menu">
+  <li
+    *ngFor="let title of titles; let i = index;"
+    (click)="setActive(i)"
+    [style.left]="-i * 11 + 'px'"
+    [style.zIndex]="10/(i + 1)"
+    [ngClass]="i===active ? 'tab-menu__item active' : 'tab-menu__item'"
+  >
+    {{ title }}
+  </li>
+</ul>

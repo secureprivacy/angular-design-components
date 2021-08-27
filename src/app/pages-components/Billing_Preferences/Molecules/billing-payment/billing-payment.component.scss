@@ -1,0 +1,107 @@
+.app-billing-payment {
+  padding: 32px;
+  background: var(--text-color);
+  box-shadow: 0px 30px 70px rgba(var(--secondary-color-code), 0.15);
+  border-radius: 20px;
+  max-width: 1200px;
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__form {
+    width: calc(100% - 324px);
+
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 160%;
+    color: rgba(var(--secondary-color-code), 0.5);
+
+    &-row {
+      display: flex;
+      align-items: flex-end;
+
+      ::ng-deep {
+        app-billing-primary-button {
+          width: 115px;
+          margin-left: 30px;
+        }
+      }
+    }
+
+    &-cvv {
+      margin-left: 30px;
+      width: 115px;
+    }
+
+    &-holder {
+      width: calc(100% - 145px);
+    }
+
+    &-input-wrapper {
+      width: calc(100% - 145px);
+    }
+
+    &-title {
+      margin-bottom: 10px;
+      margin-top: 16px;
+    }
+
+    &-date {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      ::ng-deep {
+        app-billing-select {
+          width: 47%;
+        }
+      }
+    }
+  }
+
+  &__total {
+    height: 77px;
+    width: 290px;
+    max-width: 100%;
+    padding: 14px 55px;
+    margin-top: 15px;
+    margin-left: auto;
+
+    background: rgba(var(--secondary-color-code), 0.05);
+    border-radius: 12px;
+    font-family: 'Sofia pro', 'open-sans';
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &-titles {
+      width: calc(100% - 65px);
+    }
+
+    &-title-main, &-value-main {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 180%;
+      background: var(--success-grad-light);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      margin-bottom: 5px;
+    }
+
+    &-title-secondary, &-value-secondary{
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 130%;
+      color: rgba(var(--secondary-color-code), 0.5);
+    }
+  }
+}

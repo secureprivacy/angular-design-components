@@ -1,0 +1,37 @@
+.semicircle-chart {
+  position: absolute;
+  top: -20px;
+  left: -33.5px;
+  width: 145px;
+  height: 80px;
+  background: var(--card-bg-color);
+
+  &__wrapper {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__value {
+    position: absolute;
+    top: 30px;
+    left: 22px;
+    z-index: 3;
+    color: var(--secondary-color);
+
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+  }
+}
+
+.semicircle-chart__wrapper > .semicircle-chart {
+  ::ng-deep {
+    .apexcharts-pie-label, .apexcharts-datalabels, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+      display: none!important;
+    }
+  }
+}
+

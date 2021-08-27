@@ -1,0 +1,9 @@
+<button 
+  [ngClass]="{'btn-large': true, 'active': isActive }"
+  [ngStyle]="{ 'background': backgroundColor, 'color': color }"
+>
+  <span>
+    <p class="btn-large__title">{{ title }}</p>
+    <p class="btn-large__text">{{ text }}</p>
+  </span>
+</button>

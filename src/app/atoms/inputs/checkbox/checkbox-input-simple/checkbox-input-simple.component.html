@@ -1,0 +1,14 @@
+<div  class="app-checkbox-input-simple__container">
+  <input
+    type="checkbox" 
+    [id]="id"
+    name="checkbox-input-simple" 
+    class="app-checkbox-input-simple"
+    [checked]="isChecked"
+  >
+  <label [for]="id" class="app-checkbox-input-simple__label">
+    <p class="app-checkbox-input-simple__title" *ngIf="title!==''">
+      {{ title }}
+    </p>
+  </label>
+</div>

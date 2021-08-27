@@ -1,0 +1,130 @@
+.registration-form {
+  width: 100%;
+  height: auto;
+  background: url('../../../assets/images/bg.png');
+
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--secondary-color);
+    text-transform: capitalize;
+  }
+
+  &__title {
+    font-family: 'Gramatica Regular', 'open-sans';
+    font-size: 38px;
+    line-height: 120%;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+
+    &-bold {
+      font-family: 'Gramatica Bold', 'open-sans';
+      font-size: 38px;
+      line-height: 120%;
+      text-transform: capitalize;
+      background: var(--success-grad-light);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 20px 64px;
+    background-color: rgba(var(--text-color-code), 0.5);
+  }
+
+  &__logo {
+    width: 117px;
+    height: 46px;
+  }
+
+  &__list {
+    width: 75%;
+    margin-bottom: 30px;
+
+    ::ng-deep {
+      .list-item-icon {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    padding: 42px 64px 130px;
+
+    &--left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 44%;
+
+      & > h2, & > h5 {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      width: 52%;
+      min-height: 458px;
+
+      border-radius: 12px 30px;
+      box-shadow: 0px 50px 70px rgba(44, 59, 82, 0.15);
+    }
+  }
+
+  &__wrapper-top {
+    padding: 34px 48px 7px 48px;
+  }
+
+  &__wrapper-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 32px 48px 28px 48px;
+    background-color: var(--input-bg-color);
+    border-radius: 0 0 12px 30px;
+
+    &--left {
+      width: 55%;
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .registration-form {
+    &__list {
+      width: 100%;
+    }
+
+    &__body {
+      padding: 42px 20px;
+    }
+
+    &__header {
+      padding: 20px;
+    }
+
+    &__wrapper-top {
+      padding: 20px;
+    }
+
+    &__wrapper-bottom {
+      padding: 20px 10px;
+    }
+  }
+}

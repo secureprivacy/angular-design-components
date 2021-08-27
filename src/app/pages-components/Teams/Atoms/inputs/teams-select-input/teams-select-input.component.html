@@ -1,0 +1,16 @@
+<div class="teams-select">
+  <ng-select 
+      [(ngModel)]="selectedItem"
+      class="teams-select__input" 
+      [hideSelected]="true"
+      [searchable]="false"
+      [id]="id"
+      (change)="handleChange($event)"
+  >
+    <ng-option class="teams-select__option" *ngFor="let item of items" [value]="item">
+      {{ item }}
+    </ng-option>
+  </ng-select>
+</div>
+
+  

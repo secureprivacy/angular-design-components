@@ -1,0 +1,26 @@
+.app-button-mutable-light {
+  width: fit-content;
+  padding: 17px 29px;
+  box-sizing: border-box;
+
+  text-transform: uppercase;
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+
+  border: 1px solid var(--asimetric-bg-color);
+  border-radius: 8px;
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--secondary-color);
+
+  &:hover {
+    background-color: rgba(var(--text-color-code), 0.15);
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+}

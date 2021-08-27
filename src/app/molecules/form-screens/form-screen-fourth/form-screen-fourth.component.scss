@@ -1,0 +1,39 @@
+.app-form-screen-fourth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &__list {
+    width: 48%;
+  }
+
+  &__main-title {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--secondary-color);
+    margin-bottom: 43px;
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .app-form-screen-fourth {
+    flex-direction: column;
+  
+    &__list {
+      width: 100%;
+    }
+  
+    &__item {
+      width: 100%;
+      margin-bottom: 8px;;
+    }
+  }
+}

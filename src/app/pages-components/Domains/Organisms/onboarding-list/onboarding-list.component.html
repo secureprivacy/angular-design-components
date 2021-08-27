@@ -1,0 +1,137 @@
+<div 
+  #container 
+  class="app-onboarding-component" 
+  [ngStyle]="isSmallMobile && { 'padding': '10px 3px' }"
+>
+<!-- template for delete modal -->
+  <ng-template #deleteModalContent let-titleActiveDomain="titleActiveDomain">
+    <p class="app-onboarding-component__content-text">Do you really want to delete the <strong>{{titleActiveDomain}}</strong> ?</p>
+  </ng-template>
+<!-- template for edit modal -->
+  <ng-template #editModalContent let-initialValue="initialValue">
+    <app-form-input
+      [placeholderText]="''"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValuexzParentFunction)="setValue($event, 'editTitle')"
+    >
+    </app-form-input>
+  </ng-template>
+<!-- template for add modal -->
+  <ng-template #addModalContent let-initialValue="initialValue">
+    <p class="app-onboarding-component__input-title app-onboarding-component__content-text">Domain name</p>
+    <app-form-input
+      [placeholderText]="'example.com'"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'addTitle')"
+    >
+    </app-form-input>
+    <p class="app-onboarding-component__input-title app-onboarding-component__content-text">Domain</p>
+    <app-form-input
+      [placeholderText]="'optiona'"
+      [isBold]="true"
+      [initialValue]="initialValue"
+      [name]="initialValue"
+      (changeValueParentFunction)="setValue($event, 'addText')"
+    >
+    </app-form-input>
+  </ng-template>
+
+  <div class="app-onboarding-component__top">
+    <p class="app-onboarding-component__main-title" [ngStyle]="isMobile && { 'font-size': '32px', 'line-height': '100%' }">Domains</p>
+    <app-simple-button 
+      [classes]="'btn-success-asimetric'"
+      [title]="isMobile ? '+' :' Add domain'"
+      (click)="handleAdd()"
+    >
+    </app-simple-button>
+  </div>
+  <div class="app-onboarding-component__middle">
+    <div class="app-onboarding-component__filter-wrapper">
+      <app-domains-search-input
+        [placeholderText]="'example.com'"
+        [initialValue]="''"
+        (changeValueParentFunction)="handleFilter($event)"
+      >
+      </app-domains-search-input>
+    </div>
+    <app-mutable-light-button [title]="'options'"></app-mutable-light-button>
+  </div>
+  <div 
+    [ngClass]="{ 'app-onboarding-component__buttons': true, 'mobile': isMobile }"
+    *ngIf="selected.length > 1"
+  >
+    <div class="app-onboarding-component__buttons--left">
+      <app-checkbox-mutable-gradient
+      [onActive]="false"
+      [isChecked]="domains.length === selected.length"
+      [id]="selectAll"
+      (handleChange)="selectAll()"
+      >
+      </app-checkbox-mutable-gradient>
+      <p *ngIf="selected.length" class="app-onboarding-component__selected">
+        Seletcted {{ selected.length }} domain{{ selected.length > 1 ? 's' : '' }}
+      </p>
+    </div>
+    <div class="app-onboarding-component__buttons--right">
+      <app-domains-svg-button
+        [svgPath]="'assets/images/download.svg'"
+        [borderColor]="'#D0DAEB'"
+        [bgColor]="'transparent'"
+        [bgColorHover]="'#D0DAEB'"
+        [svgColor]="'url(#paint0_linear)'"
+        [isStroke]="false"
+      >
+      </app-domains-svg-button>
+      <app-domains-svg-button
+        [svgPath]="'assets/images/basket.svg'"
+        [borderColor]="''"
+        [bgColor]="'rgb(234, 45, 45, 0.1)'"
+        [bgColorHover]="'rgb(234, 45, 45, 0.3)'"
+        [svgColor]="'rgb(234, 45, 45, 1)'"
+        [isStroke]="true"
+        (click)="handleDeleteSeveral()"
+      >
+      </app-domains-svg-button>
+    </div>
+  </div>
+  <ul class="app-onboarding-component__list">
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let domain of domains" cdkDrag>
+        <li 
+          class="app-onboarding-component__item" 
+          *ngIf="domain.title.toLowerCase().includes(query) || domain.text.toLowerCase().includes(query)"
+        >
+          <app-onboarding-card
+            [title]="domain.title"
+            [text]="domain.text"
+            [isSelected]="checkIsSelected(domain.id)"
+            (delete)="handleDelete($event)"
+            (edit)="handleEdit($event)"
+            (select)="changeSelectedList($event)"
+            (duplicate)="duplicateDomain($event)"
+            [id]="domain.id"
+          >
+          </app-onboarding-card>
+        </li>
+      </div>
+    </div>
+  </ul>
+  <div *ngIf="isModalVisible">
+    <app-approve-modal
+      [title]="modalTitle"
+      [dangerButtonTitle]="modalDangerButtonTitle"
+      [primaryButtonTitle]="modalPrimaryButtonTitle"
+      (closeModal)="closeModal()"
+      (primaryButtonFunction)="modalPrimaryButtonFunction()"
+      (dangerButtonFunction)="modalDangerButtonFunction()"
+    >
+    <ng-container 
+        *ngTemplateOutlet="modalComponent;context:ctx">
+    </ng-container>
+    </app-approve-modal>
+  </div>
+</div>

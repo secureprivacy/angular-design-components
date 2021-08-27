@@ -1,0 +1,19 @@
+.text-with-gradient-back {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+
+  &__wrapper {
+    background: var(--success-grad-light);
+    color: var(--text-color);
+    height: auto;
+    border-radius: 21px;
+    padding: 3.5px 8px 3.5px 8px;
+    text-align: center;
+    width: fit-content;
+  }
+}

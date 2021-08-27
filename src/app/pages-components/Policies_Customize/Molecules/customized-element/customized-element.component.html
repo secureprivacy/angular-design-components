@@ -1,0 +1,47 @@
+<div class="app-customized-element" #customizedElement>
+  <div *ngIf="componentsList.length">
+    <div *ngFor="let component of componentsList; let i = index; trackBy: indexTracker">
+      <div 
+        (mouseenter)="setActiveBlockNumber(i)"
+        (mouseleave)="setActiveBlockNumber(-1)"
+      >
+        <div class="app-customized-element__container">
+          <app-add-dynamic (handler)="editSectionElement($event)" [component]="component"></app-add-dynamic>
+          <button 
+            type="button"
+            [ngClass]="component.component.name === 'PoliciesDynamicTableComponent'?'app-customized-element__button-delete delete-table': 'app-customized-element__button-delete'"
+            (click)="deleteComponent(i)"
+            *ngIf="activeBlockNumber === i"
+          >
+            <img src="assets/images/deleteX.png" alt="delete">
+          </button>
+          <div
+            class="app-customized-element__buttons-container"
+            *ngIf="activeBlockNumber === i"
+          >
+            <app-small-light-add-button
+              [title]="'Add table'"
+              [classes]="'app-small-light-add-button'"
+              (click)="addItem(i, 'table')"
+            >
+            </app-small-light-add-button>
+            <app-small-light-add-button
+              [title]="'Add paragraph'"
+              [classes]="'app-small-light-add-button'"
+              (click)="addItem(i, 'text')"
+            >
+            </app-small-light-add-button>
+            <app-small-light-add-button
+              [title]="'Add list'"
+              [classes]="'app-small-light-add-button'"
+              (click)="addItem(i, 'list')"
+            >
+            </app-small-light-add-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

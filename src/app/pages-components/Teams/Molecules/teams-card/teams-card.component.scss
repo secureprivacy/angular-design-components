@@ -1,0 +1,134 @@
+.app-teams-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 204px;
+  align-items: center;
+  justify-content: start;
+  grid-column-gap: 5px;
+  position: relative;
+  width: 100%;
+  min-height: 72px;
+
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  line-height: 100%;
+
+  color: var(--secondary-color);
+  background: transparent;
+  border: 1px solid rgba(var(--secondary-color-code), 0.15);
+  border-radius: 12px;
+
+  &.mobile {
+    grid-template-columns: 1fr 1fr 18px;
+  }
+
+  &__tips {
+    z-index: 10;
+    position: absolute;
+    width: fit-content;
+    top: -80px;
+    left: calc(50% - 106px);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 324px;
+  }
+
+  &__wrapper-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ::ng-deep {
+      app-teams-mutable-primary-button  {
+        margin-right: 16px;
+      }
+      
+      app-teams-mutable-gradient-icon-button {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &__text-box {
+    display: flex;
+    align-items: center;
+    margin-left: 26px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: var(--success-grad-light);
+    color: var(--text-color);
+  }
+
+  &__name,
+  &__text,
+  &__position {
+    line-height: 20px;
+  }
+
+  &__name {
+    margin-right: 16px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  &__text {
+    opacity: 0.6;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  &__position {
+    opacity: 0.5;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  &__mobile-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+
+    position: absolute;
+    right: 0;
+    top: calc(100% + 2px);
+    z-index: 2;
+
+    background-color: rgba(var(--text-color-code), 1);
+    border: 1px solid rgba(var(--secondary-color-code), 0.15);
+    border-radius: 12px;
+  }
+
+  &__mobile-button {
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    color: rgba(var(--secondary-color-code), 0.7);
+
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 100%;
+
+    &:active {
+      background: var(--success-grad-light);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__toggler {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+  }
+}

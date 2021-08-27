@@ -1,0 +1,49 @@
+.semicircle-card {
+  width: 256px;
+  min-height: 152px;
+  overflow: hidden;
+  display: flex;
+
+  border-radius: 12px 30px;
+  color: var(--secondary-color);
+  background-color: var(--card-bg-color);
+
+  &:hover {
+    box-shadow: 0px 40px 70px rgba(var(--secondary-color-code), 0.3);
+  }
+
+  &__left {
+    width: 44.4%;
+    padding: 10px 16px;
+  }
+
+  &__right {
+    width: 55.6%;
+    padding: 43px 25px 8px 9px;
+    background-color: rgba(var(--secondary-color-code), 0.05);
+  }
+
+  &__value {
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-size: 38px;
+    line-height: 120%;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}

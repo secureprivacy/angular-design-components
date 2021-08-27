@@ -1,0 +1,80 @@
+.app-customized-element {
+  color: var(--secondary-color);
+  border: 1px dashed transparent;
+  border-radius: 8px;
+  transition: 0.3s;
+
+  ::ng-deep {
+    .app-dynamic-table, .app-dynamic-list__container {
+      margin-bottom: 16px!important;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__container {
+    width: 100%;
+    padding: 10px 11px 8px 18px;
+    position: relative;
+    
+    border: 1px dashed transparent;
+    border-radius: 8px;
+    transition: 0.3s;
+
+
+    &:hover {
+      cursor: pointer;
+      border: 1px dashed rgba(var(--secondary-color-code), 0.5);
+      border-radius: 8px;
+    }
+  }
+
+  &__button-delete {
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    top: calc(50% - 21px);
+    right: 1%;
+
+    background-color: transparent;
+    border: none;
+
+    z-index: 200;
+    &.delete-table {
+      top: 22px;
+      right: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+  }
+
+  &__text{
+    margin-bottom: 18px;
+  }
+
+  &__buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    ::ng-deep {
+      app-small-light-add-button {
+        margin-bottom: 5px;
+      }
+    }
+    
+    & * {
+      margin-right: 16px;
+    }
+  
+    & :last-child {
+      margin-right: 0;
+    }
+  }
+}
+

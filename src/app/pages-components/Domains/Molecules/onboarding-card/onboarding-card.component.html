@@ -1,0 +1,91 @@
+<div
+  [ngClass]="{ 'app-onboarding-card': true, 'mobile': isMobile }"
+  (mouseenter)="setOnActive(true)"
+  (mouseleave)="setOnActive(false)"
+  [style.background]="cardColor"
+  [style.padding]="isSmallMobile ? '5px' : '15px 24px 13px'"
+  #block
+>
+  <div class="app-onboarding-card__wrapper">
+    <app-checkbox-mutable-gradient
+      [onActive]="checkCheckboxStyle()"
+      [isChecked]="isSelected"
+      [id]="id"
+      (handleChange)="select.emit($event)"
+    >
+    </app-checkbox-mutable-gradient>
+    <div class="app-onboarding-card__text-box"
+      [style.flexDirection] = "isMobile ? 'column' : 'row'"
+      [style.marginLeft] = "isSmallMobile ? '10px' : '26px'"
+      [style.alignItems] = "isMobile ? 'flex-start' : 'center'"
+    >
+      <p 
+        [style.color] = "textColor"
+        [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
+        class="app-onboarding-card__title"
+      >
+        {{ title }}
+      </p>
+      <p 
+        [style.color] = "textColor"
+        [style.fontSize] = "isSmallMobile ? '12px' : '16px'"
+        class="app-onboarding-card__text"
+      >
+        {{ text }}
+      </p>
+    </div>
+  </div>
+  <div class="app-ondoarding-card__wrapper" *ngIf="isMobile">
+    <button 
+      type="button"
+      class="app-onboarding-card__toggler"
+      (click)="setIsVisibleOptions()"
+    >
+      <svg-icon 
+        [src]="'assets/images/menu/Options.svg'"
+        [svgStyle]="{ 'fill': '#011949' }"
+      >
+      </svg-icon>
+    </button>
+    <div class="app-onboarding-card__mobile-box" *ngIf="isVisibleOptions">
+      <button 
+        class="app-onboarding-card__mobile-button" 
+        type="button"
+        (click)="handleEdit()"
+      >
+        Edit
+      </button>
+      <button 
+        class="app-onboarding-card__mobile-button" 
+        type="button"
+        (click)="handleShowReports()"
+      > 
+        Reports
+      </button>
+      <button 
+        class="app-onboarding-card__mobile-button" 
+        type="button"
+        (click)="handleDuplicate()"
+      > 
+        Copy
+      </button>
+      <button 
+        class="app-onboarding-card__mobile-button" 
+        type="button"
+        (click)="handleDelete()"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+  <div 
+    class="app-onboarding-card__wrapper" 
+    *ngIf="!isMobile" 
+    [style.opacity]="(!isMobile && (onActive || isSelected)) ? '1' : '0'"
+  >
+    <app-mutable-primary-button [title]="'edit'" (click)="handleEdit()"></app-mutable-primary-button>
+    <app-mutable-primary-button [title]="'reports'" (click)="handleShowReports()"></app-mutable-primary-button>
+    <app-mutable-gradient-icon-button [svgPath]="'assets/images/copy.svg'" (click)="handleDuplicate()"></app-mutable-gradient-icon-button>
+    <app-mutable-danger-button [svgPath]="'assets/images/basket.svg'" (click)="handleDelete()"></app-mutable-danger-button>
+  </div>
+</div>

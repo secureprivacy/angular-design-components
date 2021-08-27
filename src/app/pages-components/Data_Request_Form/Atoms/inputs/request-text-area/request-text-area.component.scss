@@ -1,0 +1,18 @@
+.app-request-textarea {
+  min-height: 94px;
+  width: 100%;
+  padding: 19px;
+  resize: none;
+
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--secondary-color);
+  letter-spacing: 0.03em;
+  
+  background: var(--text-color);
+  border: 1px solid rgba(var(--secondary-color-code), 0.3);
+  border-radius: 12px;
+}

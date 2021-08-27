@@ -1,0 +1,9 @@
+<input 
+  [ngClass]="{ 'app-form-input-field': true, 'bold': isBold }"
+  [placeholder]="placeholderText"
+  type="text"
+  [name]="name"
+  [value]="value"
+  (input)="handleChangeValue($event)"
+  [id]="id"
+/>

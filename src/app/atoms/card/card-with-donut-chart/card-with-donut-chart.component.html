@@ -1,0 +1,25 @@
+<div class="app-donut-chard-card card" id="app-donut-chard-card">
+  <div class="app-donut-chard-card__title">
+    {{ title }}
+  </div>
+  <plotly-plot 
+    (plotlyClick)="changeNumberOnChartsClick($event)"
+    [data]="data" 
+    [layout]="layout"
+  ></plotly-plot>
+  <div class="app-donut-chard-card__value"><p>{{ activeValue }}</p></div>
+  <ul class="app-donut-chard-card__legend" #legend>
+    <li 
+      class="app-donut-chard-card__legend-item" 
+      *ngFor="let item of data[0].labels; let i = index"
+      (click)="changeNumberOnLegendClick(i)"
+    >
+      <div 
+        class="app-donut-chard-card__marker" 
+        [ngStyle]="{ 'background-color': data[0].marker.colors[i] }"
+      >
+      </div>
+      {{ data[0].values[i ]}} {{ item }} 
+    </li>
+  </ul>
+</div>

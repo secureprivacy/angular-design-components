@@ -1,0 +1,116 @@
+<div class="app-dynamic-sections-list" #sectionsList>
+  <ng-container *ngIf="!isMobile">
+    <div class="app-dynamic-sections-list__navigation">
+      <app-small-light-add-button
+        [title]="'Add section'"
+        [classes]="'app-small-light-add-button'"
+        (click)="addSection(sections.length)"
+      >
+      </app-small-light-add-button>
+        <ul *ngFor="let section of sections; let i = index;trackBy:indexTracker" class="app-dynamic-sections-list__titles">
+          <li 
+            [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'"
+            (click)="scrollToActive(i)"
+          >
+            {{ section.title }}
+          </li>
+        </ul>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isMobile">
+    <button 
+      type="button" 
+      class="app-dynamic-sections-list__open-button"
+      (click)="toggleSectionsMenu()"
+      #mobileButton
+    >
+      <img src="assets/images/customPolicy/open.png" alt="arrow">
+    </button>
+    <div 
+      #mobileMenu
+      class="app-dynamic-sections-list__navigation mobile"
+      [style.left]="isVisibleMobileMenu ? '0' : '-100%'"
+    >
+      <app-small-light-add-button
+        [title]="'Add section'"
+        [classes]="'app-small-light-add-button'"
+        (click)="addSection(sections.length)"
+      >
+      </app-small-light-add-button>
+        <ul *ngFor="let section of sections; let i = index;trackBy:indexTracker" class="app-dynamic-sections-list__titles">
+          <li 
+            [ngClass]="i===activeSection ? 'app-dynamic-sections-list__title active' : 'app-dynamic-sections-list__title'"
+            (click)="scrollToActive(i)"
+          >
+            {{ section.title }}
+          </li>
+        </ul>
+    </div>
+  </ng-container>
+  <div 
+    class="app-dynamic-sections-list__content"
+    [ngStyle]="isMobile && { 'margin': '15px 0 0', 'width': '100%' }"
+  >
+    <ul 
+      *ngFor="let section of sections; let i = index;"
+      class="app-dynamic-sections-list__sections"
+      [style.padding]="isMobile && '0'"
+    >
+      <li 
+        [id]="'id'+section.sectionId"
+        (mouseenter)="handleHover($event, i)"
+        (mouseleave)="handleHover($event, -1)"
+        class="app-dynamic-sections-list__section"
+        [style.border]="((!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i) ? '1px dashed rgba(var(--secondary-color-code), 0.5)' : none"
+      >
+        <p class="app-dynamic-sections-list__main-title">
+          <textarea
+            autosize
+            [(ngModel)]="sections[i].title" 
+            spellcheck="false"
+            class="app-dynamic-sections-list__main-title-input"
+          >
+          </textarea>
+        </p>
+        <app-customized-element 
+          (addComponentToSection)="addComponentToSection($event)"
+          (deleteComponentFromSection)="deleteComponentFromSection($event)"
+          (editSection)="editSection($event)"
+          (setHoverElement)="setHoverElement()"
+          (setNoHoverElement)="setNoHoverElement()"
+          [initialState]="section.initialState"
+          [sectionId]="section.sectionId"
+        >
+        </app-customized-element>
+        <div
+          class="app-dynamic-sections-list__buttons-container"
+          *ngIf="(!isElementActive || section.initialState.length === 0) && isSectionActive && activeSection === i"
+        >
+          <app-small-light-add-button
+            [title]="'Add table'"
+            [classes]="'app-small-light-add-button'"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'table' })"
+          >
+          </app-small-light-add-button>
+          <app-small-light-add-button
+            [title]="'Add a paragraph'"
+            [classes]="'app-small-light-add-button'"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'text' })"
+          >
+          </app-small-light-add-button>
+          <app-small-light-add-button
+            [title]="'Add list'"
+            [classes]="'app-small-light-add-button'"
+            (click)="addComponentToSection({ sectionId:section.sectionId, index:section.initialState.length-1, type:'list' })"
+          >
+          </app-small-light-add-button>
+        </div>
+        <div class="app-dynamic-sections-list__line"></div>
+      </li>
+    </ul>
+    <app-simple-policy-generator-button
+      [title]="'confirm'"
+    >
+    </app-simple-policy-generator-button>
+  </div>
+</div>

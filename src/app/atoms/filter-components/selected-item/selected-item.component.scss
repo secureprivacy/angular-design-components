@@ -1,0 +1,34 @@
+.selected-filter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 28px;
+  padding: 7px 13px 5px 8px;
+  
+  border-radius: 43px;
+  border: none;
+  color: rgba(var(--secondary-color-code), 0.5);
+  background: var(--status-bar-bg-color);
+  transition: 0.3s;
+
+  &__img {
+    margin-left: 17px;
+  }
+
+  &__text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  &:hover {
+    background: var(--asimetric-bg-color);
+
+    & > .selected-filter-item__text {
+      font-weight: 500;
+      color: rgba(var(--secondary-color-code), 0.75);
+    }
+  }
+}

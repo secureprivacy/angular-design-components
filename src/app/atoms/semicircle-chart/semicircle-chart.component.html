@@ -1,0 +1,12 @@
+<div class="semicircle-chart__wrapper">
+  <div class="semicircle-chart">
+    <apx-chart
+      [states]="chartOptions.states"
+      [series]="percent"
+      [chart]="chartOptions.chart"
+      [plotOptions]="chartOptions.plotOptions"
+      [fill]="chartOptions.fill"
+    ></apx-chart>
+  </div>
+  <span class="semicircle-chart__value">{{ percent[0] }}/100</span>
+</div>

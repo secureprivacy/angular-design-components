@@ -1,0 +1,37 @@
+<h3 class="app-form-screen-first__main-title">Create your account</h3>
+<div class="app-form-screen-first__container"> 
+  <div class="app-form-screen-first__column">   
+    <app-form-input
+      [placeholderText]="'First Name'"
+      (changeValueParentFunction)="handleInputChange($event)"
+    > 
+    </app-form-input> 
+    <app-form-input
+      [placeholderText]="'Email'"
+      (changeValueParentFunction)="handleInputChange($event)"
+    > 
+    </app-form-input>    
+    <app-form-input
+      [placeholderText]="'Password'"
+      (changeValueParentFunction)="handleInputChange($event)"
+    > 
+    </app-form-input>        
+  </div>
+  <div class="app-form-screen-first__column">   
+    <app-form-input
+      [placeholderText]="'Last Name'"
+      (changeValueParentFunction)="handleInputChange($event)"
+    > 
+    </app-form-input> 
+    <app-select-input-simple
+      [initialValue]="'This account is for:'"
+      [items]="['My current company', 'My clients company']"
+    >
+    </app-select-input-simple>   
+    <app-form-input
+      [placeholderText]="'Confirm Password'"
+      (changeValueParentFunction)="handleInputChange($event)"
+    > 
+    </app-form-input> 
+  </div>
+</div>

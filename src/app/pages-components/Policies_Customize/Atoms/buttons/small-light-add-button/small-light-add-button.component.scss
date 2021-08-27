@@ -1,0 +1,55 @@
+.app-small-light-add-button {
+  padding: 11px 16px 13px;
+  border: none;
+  border-radius: 6px;
+  background: var(--status-bar-bg-color);
+  color: var(--secondary-color);
+  transition: 0.3s;
+
+  font-family: 'Gramatica Regular', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+
+  &__image {
+    margin-right: 16px;
+  }
+
+  &:hover {
+    background: var(--asimetric-bg-color);
+  }
+
+  &:active {
+    background: var(--status-bar-bg-color);
+  }
+}
+
+.app-big-light-add-button {
+  width: 100%;
+  padding: 11px 16px 13px;
+  border: none;
+  border-radius: 6px;
+  background: var(--status-bar-bg-color);
+  color: var(--secondary-color);
+  transition: 0.3s;
+  text-align: left;
+
+  font-family: 'Gramatica Regular', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+
+  &__image {
+    margin-right: 16px;
+  }
+
+  &:hover {
+    background: var(--asimetric-bg-color);
+  }
+
+  &:active {
+    background: var(--status-bar-bg-color);
+  }
+}

@@ -1,0 +1,181 @@
+.app-dynamic-sections-list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  border: 1px solid var(--status-bar-bg-color);
+  overflow-x: hidden;
+
+  &__open-button {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: 2;
+
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border: 1px solid var(--status-bar-bg-color);
+    transform: rotate(90deg);
+
+    & > img {
+      width: 15px;
+      height: 10px;
+    }
+  }
+
+  &__main-title-input {
+    width: 100%;
+    padding-right: 15px;
+
+    border: none;
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  &__navigation {
+    position: fixed;
+
+    width: 24%;
+    overflow-y: scroll;
+    height: 90%;
+    padding: 16px;
+
+    color: rgba(var(--secondary-color-code), 0.7);
+    border: 1px solid var(--status-bar-bg-color);
+    font-family: 'Gramatica Regular', 'open-sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+
+    &.mobile {
+      width: 250px;
+      position: absolute;
+      background-color: var(--text-color);
+      z-index: 3;
+      top: 0;
+      will-change: transform;
+      transition: left 1s;
+    }
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      width: 5px;
+      background: var(--secondary-color);
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    margin-top: 15px;
+    border-bottom: 1px solid rgba(var(--secondary-color-code), 0.1);
+  }
+
+  &__section {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 10px;
+    margin-right: -14px;
+    margin-bottom: 16px;
+    border: 1px dashed transparent;
+    border-radius: 8px;
+  }
+
+  &__sections {
+    padding: 0 14px;
+  }
+
+  &__buttons-container {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 18px;
+    
+    & * {
+      margin-right: 16px;
+    }
+  
+    & :last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__content {
+    width: 74%;
+    height: 95%;
+    padding-top: 20px;
+    margin-left: 26%;
+    overflow-y: scroll;
+
+    ::ng-deep {
+      .simple-policy-generator-button {
+        margin: 32px 0 32px 32px;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      width: 5px;
+      background: var(--secondary-color);
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+    }
+  }
+
+  &__titles {
+    margin-top: 19px;
+  }
+
+  &__title {
+    color: rgba(var(--secondary-color-code), 0.7);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.active {
+      color: rgba(var(--secondary-color-code), 1);
+      font-weight: bold;
+    }
+  }
+
+  &__main-title {
+    line-height: 180%;
+    margin-left: 18px;
+    width: calc(100% + 15px);
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--secondary-color);
+  }
+}

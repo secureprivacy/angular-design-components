@@ -1,0 +1,14 @@
+<div  class="app-checkbox-circle-input__container">
+  <input
+    type="checkbox" 
+    [id]="id"
+    name="checkbox-input-simple" 
+    class="app-checkbox-circle-input"
+    [checked]="isChecked"
+  >
+  <label [for]="id" class="app-checkbox-circle-input__label">
+    <p class="app-checkbox-circle-input__title" *ngIf="title!==''">
+      {{ title }}
+    </p>
+  </label>
+</div>

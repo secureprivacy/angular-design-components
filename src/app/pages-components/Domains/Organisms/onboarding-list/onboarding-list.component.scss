@@ -1,0 +1,103 @@
+.app-onboarding-component {
+  padding: 32px;
+  position: relative;
+  color: var(--secondary-color);
+  background: var(--text-color);
+  box-shadow: 0px 30px 70px rgba(46, 45, 79, 0.15);
+  border-radius: 20px;
+
+  &__content-text {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  &__main-title {
+    font-family: 'Gramatica Bold', 'open-sans';
+    font-size: 42px;
+    line-height: 130%;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  &__middle {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__selected {
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+  }
+
+  &__filter-wrapper {
+    width: calc(100% - 108px - 24px);
+  }
+
+  &__input-title {
+    text-align: left;
+    color: rgba(var(--secondary-color-code), 0.5);
+    margin: 16px 0 8px;
+    line-height: 150%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    
+    & * {
+      margin-bottom: 23px;
+    }
+  
+    & :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 72px;
+    padding: 0 24px 14px 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--asimetric-bg-color);
+
+    &.mobile {
+      padding: 0 5px 14px 5px;
+
+      & > .app-onboarding-component__buttons--left > p {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+
+    &--left {
+      display: flex;
+      align-items: center;
+
+      & > p {
+        margin-left: 26px;
+      }
+    }
+
+    &--right {
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

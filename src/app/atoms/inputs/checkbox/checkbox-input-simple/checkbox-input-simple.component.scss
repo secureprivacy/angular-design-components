@@ -1,0 +1,37 @@
+.app-checkbox-input-simple {
+  display: none;
+
+  &__title {
+    margin-left: 40px;
+    color: var(--secondary-color);
+    line-height: 24px;
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  &__label {
+    display: block;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+
+      box-sizing: border-box;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid rgba(var(--secondary-color-code), 0.3);
+    }
+  }
+}
+
+.app-checkbox-input-simple:checked + .app-checkbox-input-simple__label {
+  &:after {
+    background: center no-repeat url('../../../../../assets/images/checkboxDark.svg');
+    border: 1px solid rgba(var(--secondary-color-code), 1);
+  }
+}

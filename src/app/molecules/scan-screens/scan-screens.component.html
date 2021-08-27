@@ -1,0 +1,23 @@
+<div class="app-scan-screen">
+  <app-text-with-after-gradient-line [title]="'scan report'"></app-text-with-after-gradient-line>
+  <div class="app-scan-screen__container">
+    <app-scan-animation></app-scan-animation>
+    <h3 class="app-scan-screen__title">Scaning halo-lab.com</h3>
+    <p class="app-scan-screen__text">The site is being scanned, it will take 5-7 minutes. </p>
+    <div class="app-scan-screen__wrapper">
+      <ul class="app-scan-screen__list">
+        <li class="app-scan-screen__list-item" *ngFor="let item of items">{{ item }}</li>
+      </ul>
+    </div>
+    <app-checkbox-input-simple
+      [isChecked]="true"
+      [title]="'Send me an e-mail once the scan is completed'"
+    >
+    </app-checkbox-input-simple>
+    <app-simple-button
+      [title]="'notify me'"
+      [classes]="'btn-success-asimetric'"
+    >
+    </app-simple-button>
+  </div>
+</div>

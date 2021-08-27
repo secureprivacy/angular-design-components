@@ -1,0 +1,29 @@
+<div class="teams-modal" (click)="handleClick($event)" #modal>
+  <div class="teams-modal__form">
+    <button 
+      type="button" 
+      class="teams-modal__close" 
+      (click)="handleClose()"
+    >
+      <img src="assets/images/deleteX.png" alt="delete">
+    </button>
+    <p class="teams-modal__title">{{ title }}</p>
+    <ng-content></ng-content>
+    <div class="teams-modal__buttons">
+      <app-teams-simple-button
+        *ngIf="dangerButtonTitle!==''" 
+        [classes]="'btn-danger'"
+        [title]="dangerButtonTitle"
+        (click)="dangerButtonFunction.emit()"
+      >
+      </app-teams-simple-button>
+      <app-teams-simple-button 
+        *ngIf="primaryButtonTitle!==''" 
+        [classes]="'btn-success'"
+        [title]="primaryButtonTitle"
+        (click)="primaryButtonFunction.emit()"
+      >
+      </app-teams-simple-button>
+    </div>
+  </div>
+</div>

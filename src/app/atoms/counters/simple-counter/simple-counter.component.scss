@@ -1,0 +1,44 @@
+.app-simple-counter {
+  display: flex;
+  width: 202px;
+
+  & * {
+    margin-right: 8px;
+  }
+
+  & :last-child {
+    margin-right: 0;
+  }
+
+  &__value-container {
+    width: 100%;
+    text-align: center;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border: none;
+    border-radius: 8px;
+    background: rgba(var(--secondary-color-code), 0.05);
+    color: var(--secondary-color);
+
+    font-family: 'Sofia pro', 'open-sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  &__next {
+    ::ng-deep {
+      app-light-button > .btn-light {
+        transform: rotate(180deg)!important;
+      }
+    }
+  }
+}
+
+
+
+

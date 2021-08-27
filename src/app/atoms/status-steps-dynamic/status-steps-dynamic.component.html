@@ -1,0 +1,30 @@
+<div class="app-steps" [style.backgroundColor]="background">
+  <div 
+    *ngFor="let number of list" 
+    class="app-steps__box"
+    [style.width]="number !== list.length - 1 ? sectionWidth : '1%'"
+  >
+    <div *ngIf="number !== (list.length - 1)" class="app-steps__wrapper">
+      <div [ngClass]="classesDots[number]">
+        <div class="app-steps__dot"></div>
+        <div 
+          class="app-steps__label"
+          [style.textAlign]="number !== 0 ? 'center' : 'left'"
+          [style.left]="number !== 0 && '-300%'"
+        >
+          {{ titles[number] }}
+        </div>
+      </div>
+      <div [ngClass]="classesLines[number]"></div>
+    </div>
+    <div *ngIf="number == (list.length - 1)" class="app-steps__wrapper">
+      <div [ngClass]="classesDots[number]">
+        <div class="app-steps__dot"></div>
+        <div class="app-steps__label app-steps__label-last">
+          {{ titles[number] }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

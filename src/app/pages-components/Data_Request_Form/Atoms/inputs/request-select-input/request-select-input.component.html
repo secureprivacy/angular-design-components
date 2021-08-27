@@ -1,0 +1,14 @@
+<div class="request-select">
+  <ng-select 
+      [(ngModel)]="selectedItem"
+      class="request-select__input" 
+      [hideSelected]="true"
+      [searchable]="false"
+      [id]="data.id"
+      (change)="handleChange($event)"
+  >
+    <ng-option class="request-select__option" *ngFor="let item of data.values" [value]="item">
+      {{ item }}
+    </ng-option>
+  </ng-select>
+</div>

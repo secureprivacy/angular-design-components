@@ -1,0 +1,28 @@
+<div class="map-chart" #mapChart>
+  <div class="map-chart__input-container">
+    <reports-select-with-initial-value
+      (onItemSelect)="createChart($event)"
+      [items]="['World', 'Europe', 'Asia', 'South America', 'North America', 'Africa', 'Australia']"
+    ></reports-select-with-initial-value>
+  </div>
+  <div class="map-chart__container" [style.height]="mapHeight+'px'">
+    <div id="chartdiv"></div>
+    <div 
+      *ngIf="isTipVisible" 
+      class="map-chart__tips" 
+      #tips
+      [style.top]="tipsTop+'px'"
+      [style.left]="tipsLeft+'px'"
+    >
+      <ul class="map-chart__tips-list">
+        <li class="map-chart__tips-item" *ngFor="let item of tipsData; let i=index">
+          <div class="map-chart__tips-text">
+            <div class="map-chart__tips-color" [style.backgroundColor]="item.id ===  activeCountry ? 'green' : 'transparent'"></div>
+            {{ item.name }}
+          </div>
+          <div class="map-chart__tips-value">{{ item.value }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

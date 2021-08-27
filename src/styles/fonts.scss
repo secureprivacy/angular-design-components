@@ -1,0 +1,395 @@
+@font-face {
+  font-family: 'Helvetica';
+  src: url("../assets/fonts/Helvetica/HelveticaRegular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url("../assets/fonts//Helvetica/HelveticaBold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../assets/fonts/Montserrat/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat Italic';
+  src: url("../assets/fonts/Montserrat/Montserrat-MediumItalic.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../assets/fonts/Montserrat/Montserrat-SemiBold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Sofia pro';
+  src: url("../assets/fonts/sofiapro-light.otf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Sofia pro';
+  src: url("../assets/fonts/sofia/Sofia\ Pro\ Light\ Az.otf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Sofia pro';
+  src: url("../assets/fonts/sofia/Sofia\ Pro\ Bold\ Az.otf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Sofia pro';
+  src: url("../assets/fonts/sofia/Sofia\ Pro\ Medium\ Az.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Sofia pro';
+  src: url("../assets/fonts/sofia/Sofia\ Pro\ Regular\ Az.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gramatica Light';
+  src: url("../assets/fonts/Gramatica-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Gramatica Medium';
+  src: url("../assets/fonts/Gramatica-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Gramatica Regular';
+  src: url("../assets/fonts/Gramatica-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Gramatica Bold';
+  src: url("../assets/fonts/Gramatica-Bold.ttf");
+}
+
+.fs-h1 {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-size: 42px;
+  line-height: 130%;
+}
+
+.fs-h1--bold-gradient {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-size: 42px;
+  line-height: 120%;
+  text-transform: capitalize;
+  background: var(--success-grad-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fs-h2 {
+  font-family: 'Gramatica Regular', 'open-sans';
+  font-size: 38px;
+  line-height: 120%;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+.fs-h2-b {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-size: 38px;
+  line-height: 120%;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+.fs-h2--bold {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-size: 38px;
+  line-height: 120%;
+  text-transform: capitalize;
+  background: var(--success-grad-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fs-h3 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--secondary-color);
+}
+
+.fs-h3-b {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--secondary-color);
+}
+
+.fs-h4--bold {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  background: var(--success-grad-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fs-h5 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--secondary-color);
+  text-transform: capitalize;
+}
+
+.fs-18-helvetica-700 {
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.fs-18-gramm-light {
+  font-family: 'Gramatica Light', 'open-sans';
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.fs-18-sofia-600 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.fs-18-sofia-300-simple {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.fs-18-sofia-300 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  color: rgba(var(--secondary-color-code), 0.75);
+  line-height: 100%;
+}
+
+.fs-16-gramm-300 {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 100%;
+}
+
+.fs-16-sofia-500 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.fs-16-helvetica-400 {
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.fs-16-sofia-300 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(var(--secondary-color-code), 1);
+}
+
+.fs-16-sofia-600 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.fs-16-sofia-800 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 100%;
+}
+
+.fs-14-montserrat-300 {
+  font-family: 'Montserrat', 'open-sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.fs-14-sofia-300 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.fs-14-gramm-normal {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.fs-14-gramm-400 {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.fs-14-gramm-400-light {
+  font-family: 'Gramatica Regular', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.fs-14-sofia-normal {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.fs-14-sofia-800 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.fs-12-sofia-400 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.fs-12-helvetica-700 {
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.fs-12-helvetica-400 {
+  font-family: 'Helvetica', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.fs-12-gramm-400 {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+}
+
+.fs-12-gramm-400-gradient {
+  font-family: 'Gramatica Bold', 'open-sans';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  background: var(--success-grad-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fs-12-sofia-300 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.fs-12-sofia-400 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.fs-12-sofia-600 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.fs-12-sofia-800 {
+  text-transform: uppercase;
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.fs-10-sofia-500 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 100%;
+}
+
+.fs-10-sofia-300 {
+  font-family: 'Sofia pro', 'open-sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 100%;
+}

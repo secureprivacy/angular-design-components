@@ -1,0 +1,19 @@
+<div class="app-simple-counter">
+  <app-light-button 
+    [srcPath]="'assets/images/back.svg'"
+    (click)="decreaseValue()"
+  >
+  </app-light-button>
+  <div class="app-simple-counter__value-container">
+    <p class="app-simple-counter__value">
+      {{ value }}
+    </p>
+  </div>
+  <span class="app-simple-counter__next">
+    <app-light-button 
+      [srcPath]="'assets/images/back.svg'"
+      (click)="increaseValue()"
+    >
+    </app-light-button>
+  </span>
+</div>

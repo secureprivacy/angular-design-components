@@ -1,6 +1,7 @@
 {
   "name": "secure-angular",
   "version": "0.0.0",
+  "homepage": "http://secureprivacy.github.io/angular-design-components",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,9 +10,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -65,6 +66,7 @@
     "codelyzer": "^6.0.0",
     "eslint": "^7.12.1",
     "eslint-plugin-storybook": "^0.1.0",
+    "gh-pages": "^3.2.3",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.0.0",
